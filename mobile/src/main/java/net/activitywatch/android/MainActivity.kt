@@ -332,6 +332,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_sync_settings -> {
                 startActivity(Intent(this, SyncSettingsActivity::class.java))
             }
+            R.id.nav_browser_settings -> {
+                startActivity(Intent(this, BrowserSettingsActivity::class.java))
+            }
             R.id.nav_share -> {
                 openDashboardInBrowser()
             }

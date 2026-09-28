@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="start">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="?android:attr/textColorSecondary"
+            android:text="The web watcher (accessibility service) records the URL of the page open in these browsers. To track another browser, add its package name below." />
+
+        <!-- Built-in browsers (read-only) -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Built-in browsers"
+            android:textAppearance="?android:attr/textAppearanceListItem" />
+
+        <TextView
+            android:id="@+id/tv_builtin_browsers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:fontFamily="monospace"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textIsSelectable="true" />
+
+        <!-- User-added browsers -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Custom browsers"
+            android:textAppearance="?android:attr/textAppearanceListItem" />
+
+        <TextView
+            android:id="@+id/tv_no_custom_browsers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="None added yet."
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="?android:attr/textColorSecondary" />
+
+        <LinearLayout
+            android:id="@+id/container_custom_browsers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:orientation="vertical" />
+
+        <!-- Add form -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Add a browser"
+            android:textAppearance="?android:attr/textAppearanceListItem" />
+
+        <EditText
+            android:id="@+id/et_browser_package"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:hint="Package name, e.g. org.example.browser"
+            android:importantForAutofill="no"
+            android:inputType="textNoSuggestions|textUri"
+            android:maxLines="1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Address bar type"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <RadioGroup
+            android:id="@+id/rg_url_bar_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:checkedButton="@+id/rb_style_auto">
+
+            <RadioButton
+                android:id="@+id/rb_style_auto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Auto-detect (try Chromium, then Firefox)" />
+
+            <RadioButton
+                android:id="@+id/rb_style_chromium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chromium-based (url_bar)" />
+
+            <RadioButton
+                android:id="@+id/rb_style_gecko"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gecko / Fenix-based (Firefox address bar)" />
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btn_add_browser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text="Add"
+            style="@style/Widget.AppCompat.Button.Borderless" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="?android:attr/textColorSecondary"
+            android:text="Changes apply immediately, no restart needed.\n\nThe package name is shown in Android Settings, Apps, App info (at the bottom), or with: adb shell pm list packages" />
+
+    </LinearLayout>
+</ScrollView>

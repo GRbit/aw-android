@@ -2,6 +2,9 @@ package net.activitywatch.android
 
 import android.content.Context
 import android.content.SharedPreferences
+import net.activitywatch.android.watcher.CustomBrowser
+import net.activitywatch.android.watcher.decodeCustomBrowsers
+import net.activitywatch.android.watcher.encodeCustomBrowsers
 
 class AWPreferences(context: Context) {
     private val sharedPreferences: SharedPreferences =
@@ -9,6 +12,7 @@ class AWPreferences(context: Context) {
 
     companion object {
         const val PREFERENCES_NAME = "AWPreferences"
+        private const val CUSTOM_BROWSERS_KEY = "customBrowsers"
         const val LAST_SYNC_STATUS_CHANGED_ACTION =
             "net.activitywatch.android.LAST_SYNC_STATUS_CHANGED"
     }
@@ -177,5 +181,27 @@ class AWPreferences(context: Context) {
 
     fun setDashboardAuthEnabled(enabled: Boolean) {
         sharedPreferences.edit().putBoolean("dashboardAuthEnabled", enabled).commit()
+    }
+
+    // Browsers added by the user in Browser Tracking settings, on top of the built-in list.
+    internal fun getCustomBrowsers(): List<CustomBrowser> =
+        decodeCustomBrowsers(sharedPreferences.getString(CUSTOM_BROWSERS_KEY, null))
+
+    internal fun setCustomBrowsers(browsers: List<CustomBrowser>) {
+        sharedPreferences.edit().putString(CUSTOM_BROWSERS_KEY, encodeCustomBrowsers(browsers)).apply()
+    }
+
+    // Lets WebWatcher pick up edits without a restart. SharedPreferences holds listeners
+    // weakly, so the caller must keep the returned reference for as long as it listens.
+    fun registerCustomBrowsersListener(onChange: () -> Unit): SharedPreferences.OnSharedPreferenceChangeListener {
+        val listener = SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
+            if (key == CUSTOM_BROWSERS_KEY) onChange()
+        }
+        sharedPreferences.registerOnSharedPreferenceChangeListener(listener)
+        return listener
+    }
+
+    fun unregisterListener(listener: SharedPreferences.OnSharedPreferenceChangeListener) {
+        sharedPreferences.unregisterOnSharedPreferenceChangeListener(listener)
     }
 }

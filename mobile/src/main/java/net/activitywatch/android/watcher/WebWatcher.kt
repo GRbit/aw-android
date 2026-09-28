@@ -1,10 +1,12 @@
 package net.activitywatch.android.watcher
 
 import android.accessibilityservice.AccessibilityService
+import android.content.SharedPreferences
 import android.util.Log
 import kotlin.concurrent.thread
 import android.view.accessibility.AccessibilityEvent
 import android.view.accessibility.AccessibilityNodeInfo
+import net.activitywatch.android.AWPreferences
 import net.activitywatch.android.RustInterface
 import org.json.JSONObject
 
@@ -46,6 +48,10 @@ class WebWatcher : AccessibilityService() {
     private var lastWindowId: Int? = null
     private val sessionTracker = BrowserSessionTracker()
 
+    @Volatile private var customBrowsers: Map<String, CustomBrowser> = emptyMap()
+    private var prefs: AWPreferences? = null
+    private var customBrowsersListener: SharedPreferences.OnSharedPreferenceChangeListener? = null
+
     private fun extractChromiumUrl(packageName: String, event: AccessibilityEvent): String? =
         extractTextByViewId(event, "$packageName:id/url_bar")
 
@@ -73,12 +79,31 @@ class WebWatcher : AccessibilityService() {
             extractTextByViewId(event, "com.opera.browser:id/url_field")
                 ?: extractTextByViewId(event, "com.opera.browser:id/address_field")
         "com.microsoft.emmx" -> extractTextByViewId(event, "com.microsoft.emmx:id/url_bar")
-        else -> null
+        else -> customBrowsers[packageName]?.let { extractCustomBrowserUrl(it, event) }
     }?.let(stripProtocol)
+
+    private fun extractCustomBrowserUrl(browser: CustomBrowser, event: AccessibilityEvent): String? =
+        when (browser.style) {
+            UrlBarStyle.CHROMIUM -> extractChromiumUrl(browser.packageName, event)
+            UrlBarStyle.GECKO -> extractGeckoUrl(browser.packageName, event)
+            // Chromium first: a by-id lookup is cheap, the Gecko path walks the tree.
+            UrlBarStyle.AUTO -> extractChromiumUrl(browser.packageName, event)
+                ?: extractGeckoUrl(browser.packageName, event)
+        }
+
+    private fun loadCustomBrowsers(prefs: AWPreferences) {
+        customBrowsers = prefs.getCustomBrowsers().associateBy { it.packageName }
+        Log.i(TAG, "Custom browsers: ${customBrowsers.values.joinToString { "${it.packageName} (${it.style.key})" }}")
+    }
 
     override fun onCreate() {
         super.onCreate()
         Log.i(TAG, "Creating WebWatcher")
+        AWPreferences(this).also { p ->
+            prefs = p
+            loadCustomBrowsers(p)
+            customBrowsersListener = p.registerCustomBrowsersListener { loadCustomBrowsers(p) }
+        }
         // createBucketHelper() blocks on the datastore worker. Doing that on the
         // accessibility service's main thread produced "Executing service
         // WebWatcher" ANRs whenever the worker was busy (aw-android#261), so
@@ -102,7 +127,8 @@ class WebWatcher : AccessibilityService() {
         }
 
         val packageName = event.packageName?.toString()
-        val isKnownBrowser = packageName != null && packageName in KNOWN_BROWSER_PACKAGES
+        val isKnownBrowser = packageName != null &&
+            (packageName in KNOWN_BROWSER_PACKAGES || packageName in customBrowsers)
 
         val windowChanged = windowChanged(event.windowId)
         lastWindowId = event.windowId
@@ -212,6 +238,11 @@ class WebWatcher : AccessibilityService() {
     }
 
     override fun onInterrupt() {}
+
+    override fun onDestroy() {
+        customBrowsersListener?.let { prefs?.unregisterListener(it) }
+        super.onDestroy()
+    }
 
     companion object {
         internal val KNOWN_BROWSER_PACKAGES = setOf(

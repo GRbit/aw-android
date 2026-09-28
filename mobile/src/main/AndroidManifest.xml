@@ -63,6 +63,12 @@
             android:configChanges="orientation"
             android:exported="false"/>
 
+        <activity
+            android:name=".BrowserSettingsActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation"
+            android:exported="false"/>
+
         <receiver
             android:name=".watcher.AlarmReceiver"
             android:enabled="true"

@@ -34,6 +34,10 @@
                         android:icon="@drawable/ic_menu_manage"
                         android:title="@string/sync_settings"/>
                 <item
+                        android:id="@+id/nav_browser_settings"
+                        android:icon="@drawable/ic_menu_manage"
+                        android:title="@string/browser_settings"/>
+                <item
                         android:id="@+id/nav_share"
                         android:icon="@drawable/ic_menu_share"
                         android:title="@string/open_in_browser"/>

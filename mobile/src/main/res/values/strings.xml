@@ -9,6 +9,7 @@
     <string name="dashboard_settings">Dashboard Settings</string>
     <string name="api_authentication">API Authentication</string>
     <string name="sync_settings">Sync Settings</string>
+    <string name="browser_settings">Browser Tracking</string>
     <string name="open_in_browser">Open in browser</string>
     <string name="title_activity_buckets">BucketsActivity</string>
     <string name="welcome_title_text">Welcome, early user!</string>
