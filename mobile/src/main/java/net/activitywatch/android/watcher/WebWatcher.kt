@@ -6,6 +6,10 @@ import kotlin.concurrent.thread
 import android.view.accessibility.AccessibilityEvent
 import android.view.accessibility.AccessibilityNodeInfo
 import net.activitywatch.android.RustInterface
+import net.activitywatch.android.watcher.telegram.CompletedTelegramSession
+import net.activitywatch.android.watcher.telegram.TELEGRAM_BUCKET_ID
+import net.activitywatch.android.watcher.telegram.TELEGRAM_BUCKET_TYPE
+import net.activitywatch.android.watcher.telegram.TelegramWatcher
 import org.json.JSONObject
 
 private fun extractTextByViewId(event: AccessibilityEvent, viewId: String): String? {
@@ -45,6 +49,7 @@ class WebWatcher : AccessibilityService() {
     @Volatile private var ri : RustInterface? = null
     private var lastWindowId: Int? = null
     private val sessionTracker = BrowserSessionTracker()
+    private lateinit var telegramWatcher: TelegramWatcher
 
     // Applies stripProtocol uniformly to whatever extractor matched, so the logged url is
     // formatted identically no matter which browser/view-variant produced it.
@@ -76,18 +81,33 @@ class WebWatcher : AccessibilityService() {
         // the null-safe ri?. calls, same as MediaWatcher.
         thread(name = "WebWatcher-init") {
             try {
-                ri = RustInterface(applicationContext).also { it.createBucketHelper(bucket_id, "web.tab.current") }
+                ri = RustInterface(applicationContext).also {
+                    it.createBucketHelper(bucket_id, "web.tab.current")
+                    it.createBucketHelper(TELEGRAM_BUCKET_ID, TELEGRAM_BUCKET_TYPE)
+                }
             } catch (ex: Throwable) {
                 // Catch Throwable (not just Exception) because System.loadLibrary() throws
                 // UnsatisfiedLinkError (an Error subclass) when the native library is missing.
                 Log.e(TAG, "Failed to initialize RustInterface: ${ex.message}")
             }
         }
+        telegramWatcher = TelegramWatcher(this, ::logTelegramEvent).also { it.start() }
+    }
+
+    override fun onDestroy() {
+        telegramWatcher.stop()
+        super.onDestroy()
     }
 
     // TODO: This method is called very often, which might affect performance. Future optimizations needed.
     override fun onAccessibilityEvent(event: AccessibilityEvent) {
-        if (shouldIgnoreEvent(event)) {
+        try {
+            telegramWatcher.onEvent(event)
+        } catch (ex: Exception) {
+            Log.e(TAG, "Telegram watcher failed: ${ex.message ?: ex}")
+        }
+        // Clicks are subscribed for the Telegram watcher only; browsers keep their old input.
+        if (event.eventType == AccessibilityEvent.TYPE_VIEW_CLICKED || shouldIgnoreEvent(event)) {
             return
         }
 
@@ -199,6 +219,18 @@ class WebWatcher : AccessibilityService() {
 
         Log.i(TAG, "Registered event: $data")
         ri?.heartbeatHelper(bucket_id, session.start, session.duration.seconds.toDouble(), data, 1.0)
+    }
+
+    private fun logTelegramEvent(session: CompletedTelegramSession) {
+        val a = session.activity
+        val data = JSONObject()
+            .put("app", a.app)
+            .put("screen", a.screen.key)
+            .put("chat", a.chat)
+            .put("chat_type", a.chatType)
+            .put("media_type", a.mediaType)
+        Log.i(TAG, "Registered telegram event: ${a.app} ${a.screen.key} ${session.duration.seconds}s")
+        ri?.heartbeatHelper(TELEGRAM_BUCKET_ID, session.start, session.duration.toMillis() / 1000.0, data, 1.0)
     }
 
     override fun onInterrupt() {}
