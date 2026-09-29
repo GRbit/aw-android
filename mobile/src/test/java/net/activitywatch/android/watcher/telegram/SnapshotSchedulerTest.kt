@@ -1,7 +1,6 @@
 package net.activitywatch.android.watcher.telegram
 
 import org.junit.Assert.assertEquals
-import org.junit.Assert.assertNull
 import org.junit.Test
 import org.threeten.bp.Instant
 
@@ -12,13 +11,15 @@ class SnapshotSchedulerTest {
     private fun at(ms: Long): Instant = Instant.ofEpochMilli(ms)
 
     @Test
-    fun windowStateChangeIsSnapshottedImmediately() {
-        assertEquals(at(1_000), scheduler.onEvent(UiEventType.WINDOW_STATE_CHANGED, at(1_000)))
-    }
-
-    @Test
-    fun clickWaitsForTheNextScreenToRender() {
-        assertEquals(at(1_000 + CLICK_SETTLE_MS), scheduler.onEvent(UiEventType.VIEW_CLICKED, at(1_000)))
+    fun snapshotDelayDependsOnEventType() {
+        val cases = mapOf(
+            UiEventType.WINDOW_STATE_CHANGED to at(1_000),
+            UiEventType.VIEW_CLICKED to at(1_000 + CLICK_SETTLE_MS),
+            UiEventType.OTHER to null,
+        )
+        for ((type, expected) in cases) {
+            assertEquals(type.name, expected, SnapshotScheduler().onEvent(type, at(1_000)))
+        }
     }
 
     @Test
@@ -38,10 +39,5 @@ class SnapshotSchedulerTest {
             }
             due = scheduler.onEvent(UiEventType.WINDOW_CONTENT_CHANGED, now)
         }
-    }
-
-    @Test
-    fun otherEventsDoNotSchedule() {
-        assertNull(scheduler.onEvent(UiEventType.OTHER, at(0)))
     }
 }

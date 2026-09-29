@@ -1,279 +1,55 @@
 # ms	type	package	class	text	content_description
-0	WINDOWS	null	null		
-14	WINDOWS	null	null		
-15	WINDOWS	null	null		
-15	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-91	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-221	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-332	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-628	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-732	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-1756	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-1857	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
 2583	CLICKED	org.forkclient.messenger.beta	android.view.View		All
-2585	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-2696	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-2731	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-2846	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-2961	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-11227	CONTENT	org.forkclient.messenger.beta	android.view.ViewGroup		
-11342	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-11457	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-11572	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-11689	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-11805	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-11824	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-11937	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-12037	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-12070	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-12282	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-12405	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-12521	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-12637	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-12756	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-13321	CONTENT	org.forkclient.messenger.beta	android.view.ViewGroup		
 13322	CLICKED	org.forkclient.messenger.beta	android.view.ViewGroup		9df869ff. Received at 17:51. ca008104, a514969e
-13481	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-13597	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-13661	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-13776	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
 22398	STATE	com.android.systemui	android.view.View		
-22408	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-22528	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-23861	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-23974	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-25927	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-26048	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-26402	CONTENT	org.forkclient.messenger.beta	android.view.ViewGroup		
 26404	CLICKED	org.forkclient.messenger.beta	android.view.ViewGroup		9df869ff. Online. Received at 17:51. ca008104, a514969e
-26450	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-26549	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-26596	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-31951	CONTENT	org.forkclient.messenger.beta	android.widget.ImageView		
-32060	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-36395	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-36522	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
 36651	STATE	com.menny.android.anysoftkeyboard	android.inputmethodservice.SoftInputWindow	Back, Switch input method	
-36705	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-36816	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-39665	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-39782	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-40081	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-40181	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-40236	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-40246	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-40364	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-40627	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-40725	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-40736	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-40846	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-41090	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-41208	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-41360	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-41437	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-41483	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-41585	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-41868	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-41968	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-42083	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
 46767	CLICKED	org.forkclient.messenger.beta	android.view.ViewGroup		
-46811	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-46819	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-46839	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-46938	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-47052	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-47154	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
 53131	STATE	com.android.systemui	android.view.View		
-53153	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-53264	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
 54589	STATE	com.android.systemui	android.view.View		
 54663	STATE	fr.neamar.kiss	fr.neamar.kiss.MainActivity	KISS launcher	
-54699	CONTENT	fr.neamar.kiss	android.widget.FrameLayout		
 54700	STATE	fr.neamar.kiss	fr.neamar.kiss.MainActivity	KISS launcher	
 55119	STATE	com.android.systemui	android.widget.FrameLayout		
 58703	CLICKED	fr.neamar.kiss	android.widget.FrameLayout		ad19344a
-58705	CONTENT	fr.neamar.kiss	android.widget.ImageView		
 58741	STATE	org.forkclient.messenger.beta	android.widget.FrameLayout	Application icon	
 58867	STATE	org.forkclient.messenger.beta	org.telegram.ui.LaunchActivity	Fork Client	
-58965	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
 58965	STATE	org.forkclient.messenger.beta	org.telegram.ui.LaunchActivity	Fork Client	
-58971	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-59085	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
 59178	STATE	com.android.permissioncontroller	com.android.permissioncontroller.permission.ui.GrantPermissionsActivity	Permission request	
 59212	STATE	com.android.permissioncontroller	com.android.permissioncontroller.permission.ui.GrantPermissionsActivity	Permission request	
 59234	STATE	org.forkclient.messenger.beta	org.telegram.ui.LaunchActivity	Fork Client	
-59334	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
 65243	CLICKED	org.forkclient.messenger.beta	android.view.View		482bd64c
-65246	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-65362	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-65413	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-65425	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-65527	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-65543	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-65642	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
 67562	STATE	com.android.systemui	android.widget.FrameLayout		
-69842	CONTENT	org.forkclient.messenger.beta	android.view.ViewGroup		
 69843	CLICKED	org.forkclient.messenger.beta	android.view.ViewGroup		Channel. 6fb63141. Muted. Received at 19:20. Photo. b8525625
-69999	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-70082	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-70181	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-70280	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-74454	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-74552	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
 78402	CLICKED	org.forkclient.messenger.beta	android.view.ViewGroup		
-78435	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
 78447	STATE	org.forkclient.messenger.beta	android.widget.FrameLayout		
-78506	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
 78507	STATE	org.forkclient.messenger.beta	android.widget.FrameLayout		
-79186	CONTENT	org.forkclient.messenger.beta	android.widget.LinearLayout		
 79237	STATE	org.forkclient.messenger.beta	org.telegram.ui.LaunchActivity	6fb63141	
-79838	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-79864	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-79947	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-80035	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-82887	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-82987	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-83164	CONTENT	org.forkclient.messenger.beta	android.view.ViewGroup		
-83265	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-83283	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-83398	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-83516	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-83630	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-83646	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-83745	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-83943	CONTENT	org.forkclient.messenger.beta	android.view.ViewGroup		
-84058	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-84159	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-84176	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-84290	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-84308	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-84409	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-84620	CONTENT	org.forkclient.messenger.beta	android.view.ViewGroup		
-84738	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-84855	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-84970	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-85083	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-85184	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-85299	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-85415	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-85532	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-85647	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-85673	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-85775	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-85929	CONTENT	org.forkclient.messenger.beta	android.view.ViewGroup		
-86043	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-86162	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-86276	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-86295	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-86395	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-86538	CONTENT	org.forkclient.messenger.beta	android.view.ViewGroup		
-86655	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-86771	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-86886	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-86902	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-87012	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-87018	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-88639	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-88740	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
 90809	STATE	com.android.systemui	android.view.View		
-90838	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-90936	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-91046	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-91140	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-91554	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-91650	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
 93627	STATE	com.android.systemui	android.view.View		
-93649	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-93749	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-97156	CONTENT	org.forkclient.messenger.beta	android.view.View		
-97205	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
 97208	CLICKED	org.forkclient.messenger.beta	android.view.View		b220ee2e
-97272	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-97337	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-97455	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-97553	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-99619	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-99721	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-101780	CONTENT	org.forkclient.messenger.beta	android.view.ViewGroup		
 101781	CLICKED	org.forkclient.messenger.beta	android.view.ViewGroup		Channel. 3b406ea6. Muted. Received at 19:39. dfb4c9a1
-101888	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-101970	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-102086	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-103454	CONTENT	org.forkclient.messenger.beta	android.view.ViewGroup		
-103555	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-103673	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-103787	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-103804	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-103919	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-104036	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-104090	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-104204	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-104319	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-104433	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-104451	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-104564	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
 104666	STATE	com.android.systemui	android.widget.FrameLayout		
 105049	STATE	org.forkclient.messenger.beta	android.widget.FrameLayout	Go back, Switch to fullscreen	
-105107	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
 105109	STATE	org.forkclient.messenger.beta	android.widget.FrameLayout	Go back, Switch to fullscreen	
-105223	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-105336	CONTENT	org.forkclient.messenger.beta	android.widget.ImageView		
-105450	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-108039	CONTENT	org.forkclient.messenger.beta	android.widget.ImageView		
-108147	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-121938	CONTENT	org.forkclient.messenger.beta	android.widget.ImageView		
-122164	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-122282	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
-122392	CONTENT	org.forkclient.messenger.beta	android.widget.ImageView		
 122766	STATE	com.android.systemui	android.view.View		
-122799	CONTENT	org.forkclient.messenger.beta	android.view.View		
-122909	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
 122923	STATE	org.forkclient.messenger.beta	org.telegram.ui.LaunchActivity	3b406ea6	
-124540	CONTENT	org.forkclient.messenger.beta	android.view.ViewGroup		
 124607	STATE	com.android.launcher3	com.android.quickstep.RecentsActivity	Recent apps	
-124646	CONTENT	org.forkclient.messenger.beta	android.widget.FrameLayout		
 124657	STATE	fr.neamar.kiss	fr.neamar.kiss.MainActivity	KISS launcher	
-124751	CONTENT	fr.neamar.kiss	android.widget.FrameLayout		
 124855	STATE	com.android.systemui	android.widget.FrameLayout		
 125255	STATE	fr.neamar.kiss	fr.neamar.kiss.MainActivity	KISS launcher	
 129211	CLICKED	fr.neamar.kiss	android.widget.FrameLayout		666bd59a
-129216	CONTENT	fr.neamar.kiss	android.widget.ImageView		
 129286	STATE	com.poupa.vinylmusicplayer	com.poupa.vinylmusicplayer.ui.activities.MainActivity	Vinyl Music Player	
-129356	CONTENT	com.poupa.vinylmusicplayer	androidx.drawerlayout.widget.DrawerLayout		
 129357	STATE	com.poupa.vinylmusicplayer	com.poupa.vinylmusicplayer.ui.activities.MainActivity	Vinyl Music Player	
-129432	CONTENT	com.poupa.vinylmusicplayer	android.widget.SeekBar		
-129513	CONTENT	com.poupa.vinylmusicplayer	android.widget.FrameLayout		
-129711	CONTENT	com.poupa.vinylmusicplayer	android.widget.FrameLayout		
-129815	CONTENT	com.poupa.vinylmusicplayer	androidx.recyclerview.widget.RecyclerView		
 132863	STATE	com.android.launcher3	com.android.quickstep.RecentsActivity	Recent apps	
-132966	CONTENT	com.android.launcher3	android.widget.FrameLayout		
-133082	CONTENT	com.android.launcher3	android.widget.FrameLayout		
-133369	CONTENT	com.android.launcher3	android.widget.FrameLayout		
 133413	STATE	org.forkclient.messenger.beta	org.telegram.ui.LaunchActivity	3b406ea6	
 133464	STATE	org.forkclient.messenger.beta	org.telegram.ui.LaunchActivity	3b406ea6	
-138227	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
 138237	STATE	com.android.launcher3	com.android.quickstep.RecentsActivity	Recent apps	
 138302	STATE	fr.neamar.kiss	fr.neamar.kiss.MainActivity	KISS launcher	
-138395	CONTENT	fr.neamar.kiss	android.widget.FrameLayout		
 138813	STATE	fr.neamar.kiss	fr.neamar.kiss.MainActivity	KISS launcher	
 140870	CLICKED	fr.neamar.kiss	android.widget.FrameLayout		666bd59a
-140881	CONTENT	fr.neamar.kiss	android.widget.ImageView		
 140907	STATE	com.poupa.vinylmusicplayer	com.poupa.vinylmusicplayer.ui.activities.MainActivity	Vinyl Music Player	
 140961	STATE	com.poupa.vinylmusicplayer	com.poupa.vinylmusicplayer.ui.activities.MainActivity	Vinyl Music Player	
 142597	STATE	com.android.launcher3	com.android.quickstep.RecentsActivity	Recent apps	
-142692	CONTENT	com.android.launcher3	android.widget.FrameLayout		
-142793	CONTENT	com.android.launcher3	android.widget.FrameLayout		
-142894	CONTENT	com.android.launcher3	android.widget.FrameLayout		
-143005	CONTENT	com.android.launcher3	android.widget.FrameLayout		
-143204	CONTENT	com.android.launcher3	android.widget.FrameLayout		
-143304	CONTENT	com.android.launcher3	android.widget.FrameLayout		
-143832	CONTENT	com.android.launcher3	android.widget.FrameLayout		
-143948	CONTENT	com.android.launcher3	android.widget.FrameLayout		
-144064	CONTENT	com.android.launcher3	android.widget.FrameLayout		
-144377	CONTENT	com.android.launcher3	android.widget.FrameLayout		
-144394	CONTENT	com.android.launcher3	android.widget.FrameLayout		
-145684	CONTENT	com.android.launcher3	android.widget.FrameLayout		
-145708	CONTENT	com.android.launcher3	android.widget.FrameLayout		
 145709	CLICKED	com.android.launcher3	android.widget.FrameLayout	ad19344a, 719ea396	
 145724	STATE	org.forkclient.messenger.beta	org.telegram.ui.LaunchActivity	3b406ea6	
 145786	STATE	org.forkclient.messenger.beta	org.telegram.ui.LaunchActivity	3b406ea6	
@@ -281,27 +57,8 @@
 148593	STATE	com.android.systemui	android.widget.FrameLayout		
 148595	STATE	com.android.systemui	android.widget.FrameLayout		
 149349	STATE	com.android.systemui	android.widget.FrameLayout		
-149392	CONTENT	com.android.systemui	android.widget.FrameLayout		
 149393	STATE	com.android.systemui	android.widget.FrameLayout		
-149496	CONTENT	com.android.systemui	android.widget.FrameLayout		
-154779	CONTENT	com.android.systemui	android.widget.FrameLayout		
-154880	CONTENT	com.android.systemui	android.widget.FrameLayout		
-155021	CONTENT	com.android.systemui	android.widget.TextView		
-155022	CONTENT	com.android.systemui	android.widget.TextView		
-155023	CONTENT	com.android.systemui	android.widget.TextView		
-155131	CONTENT	com.android.systemui	android.view.View		
 155284	STATE	com.android.systemui	android.widget.FrameLayout		
-155397	CONTENT	com.android.systemui	android.view.ViewGroup		
-155840	CONTENT	com.android.systemui	android.widget.TextView		
-155840	CONTENT	com.android.systemui	android.widget.TextView		
-155841	CONTENT	com.android.systemui	android.widget.TextView		
 155909	STATE	org.forkclient.messenger.beta	org.telegram.ui.LaunchActivity	3b406ea6	
-155934	CONTENT	com.android.systemui	android.widget.FrameLayout		
-155944	CONTENT	com.android.systemui	android.view.ViewGroup		
-155964	CONTENT	com.android.systemui	android.widget.FrameLayout		
-155979	CONTENT	com.android.systemui	android.view.View		
-155980	CONTENT	com.android.systemui	android.view.View		
 156010	STATE	org.forkclient.messenger.beta	org.telegram.ui.LaunchActivity	3b406ea6	
 156022	STATE	com.android.systemui	android.widget.FrameLayout		
-156876	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		
-156968	CONTENT	org.forkclient.messenger.beta	androidx.recyclerview.widget.RecyclerView		

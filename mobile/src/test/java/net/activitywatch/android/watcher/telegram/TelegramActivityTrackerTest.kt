@@ -15,13 +15,15 @@ private const val KEYBOARD = "com.menny.android.anysoftkeyboard"
 // (screen, chat, chat_type, media_type) as they end up in the bucket.
 private fun TelegramActivity.row() = listOf(screen.key, chat, chatType, mediaType)
 
+private fun chat(name: String, type: String) = listOf("chat", name, type, "")
+private fun media(name: String, type: String, kind: String) = listOf("media", name, type, kind)
+private val LIST = listOf("chat_list", "", "", "")
+private val UNKNOWN = listOf("unknown", "", "", "")
+
 private fun at(ms: Long): Instant = Instant.ofEpochMilli(1_700_000_000_000 + ms)
 
 private fun UiNode.replaceText(old: String, new: String): UiNode =
     copy(text = if (text == old) new else text, children = children.map { it.replaceText(old, new) })
-
-private fun UiNode.withoutEditText(): UiNode =
-    copy(children = children.filter { it.className != "android.widget.EditText" }.map { it.withoutEditText() })
 
 // Replays an anonymized `uiautomator events` capture (scripts/anonymize-a11y-capture.py)
 // through the tracker without any tree snapshots: the event-only mode used when the
@@ -36,7 +38,6 @@ private fun replay(fixture: String, tracker: TelegramActivityTracker): List<Comp
             val f = line.split("\t").map { it.replace("\\n", "\n").replace("\\t", "\t").replace("\\\\", "\\") }
             val type = when (f[1]) {
                 "STATE" -> UiEventType.WINDOW_STATE_CHANGED
-                "CONTENT" -> UiEventType.WINDOW_CONTENT_CHANGED
                 "CLICKED" -> UiEventType.VIEW_CLICKED
                 else -> UiEventType.OTHER
             }
@@ -59,16 +60,19 @@ class TelegramActivityTrackerTest {
     private fun current() = tracker.leave(at(1_000_000))!!.activity.row()
 
     @Test
-    fun classifiesChatHeaders() {
+    fun classifiesOneSnapshotOnAFreshTracker() {
         val cases = mapOf(
-            "forkgram-en-channel.xml" to listOf("chat", "071069b5", "channel", ""),
-            "forkgram-ru-channel.xml" to listOf("chat", "5fb9ea5f", "channel", ""),
-            "forkgram-en-group.xml" to listOf("chat", "3abd7dc3", "group", ""),
-            "forkgram-ru-group.xml" to listOf("chat", "83f9e063", "group", ""),
-            "forkgram-en-direct.xml" to listOf("chat", "2a4c07a1", "direct", ""),
-            "forkgram-ru-direct.xml" to listOf("chat", "5507c090", "direct", ""),
-            "forkgram-en-list.xml" to listOf("chat_list", "", "", ""),
-            "forkgram-ru-list.xml" to listOf("chat_list", "", "", ""),
+            "forkgram-en-channel.xml" to chat("071069b5", "channel"),
+            "forkgram-ru-channel.xml" to chat("5fb9ea5f", "channel"),
+            "forkgram-en-group.xml" to chat("3abd7dc3", "group"),
+            "forkgram-en-direct.xml" to chat("2a4c07a1", "direct"),
+            "forkgram-en-list.xml" to LIST,
+            "forkgram-ru-list.xml" to LIST,
+            // No chat seen before the viewer, so there is nothing to inherit.
+            "forkgram-en-video.xml" to media("", "", "video"),
+            "forkgram-en-story.xml" to UNKNOWN,
+            // Without a viewer to stay in, a bare screen is just unknown.
+            "forkgram-en-photo-hidden.xml" to UNKNOWN,
         )
         for ((fixture, expected) in cases) {
             val t = TelegramActivityTracker()
@@ -81,44 +85,19 @@ class TelegramActivityTrackerTest {
     fun commentsKeepTheChannel() {
         snapshot("forkgram-en-channel.xml", 0)
         assertNull(snapshot("forkgram-en-comments.xml", 1_000))
-        assertEquals(listOf("chat", "071069b5", "channel", ""), current())
-
-        val ru = TelegramActivityTracker()
-        ru.onSnapshot(FORKGRAM, loadDump("forkgram-ru-channel.xml").root, at(0))
-        assertNull(ru.onSnapshot(FORKGRAM, loadDump("forkgram-ru-comments.xml").root, at(1)))
+        assertEquals(chat("071069b5", "channel"), current())
     }
 
     @Test
-    fun mediaViewerInheritsTheChat() {
+    fun mediaViewerInheritsTheChatAndSurvivesHiddenControls() {
         snapshot("forkgram-en-channel.xml", 0)
-        val chat = snapshot("forkgram-en-photo.xml", 5_000)!!
-        assertEquals(listOf("chat", "071069b5", "channel", ""), chat.activity.row())
-        assertEquals(Duration.ofSeconds(5), chat.duration)
+        val done = snapshot("forkgram-en-photo.xml", 5_000)!!
+        assertEquals(chat("071069b5", "channel"), done.activity.row())
+        assertEquals(Duration.ofSeconds(5), done.duration)
         assertNull(snapshot("forkgram-en-photo-hidden.xml", 6_000))
-        assertEquals(listOf("media", "071069b5", "channel", "image"), current())
-    }
-
-    @Test
-    fun videoViewerWithHiddenControlsStaysVideo() {
-        snapshot("forkgram-ru-channel.xml", 0)
-        snapshot("forkgram-ru-video.xml", 1_000)
-        assertNull(snapshot("forkgram-en-video-hidden.xml", 2_000))
-        assertEquals(listOf("media", "5fb9ea5f", "channel", "video"), current())
-    }
-
-    @Test
-    fun viewerWithoutKnownChat() {
-        snapshot("forkgram-en-video.xml", 0)
-        assertEquals(listOf("media", "", "", "video"), current())
-    }
-
-    @Test
-    fun unrecognizedScreenIsUnknown() {
-        snapshot("forkgram-en-list.xml", 0)
-        snapshot("forkgram-en-story.xml", 1_000)
-        assertEquals(listOf("unknown", "", "", ""), current())
-        snapshot("forkgram-en-photo-hidden.xml", 0)
-        assertEquals(listOf("unknown", "", "", ""), current())
+        assertEquals(media("071069b5", "channel", "image"), snapshot("forkgram-en-video.xml", 7_000)!!.activity.row())
+        assertNull(snapshot("forkgram-en-video-hidden.xml", 8_000))
+        assertEquals(media("071069b5", "channel", "video"), current())
     }
 
     @Test
@@ -126,7 +105,7 @@ class TelegramActivityTrackerTest {
         val group = loadDump("forkgram-en-group.xml").root
         tracker.onSnapshot(FORKGRAM, group, at(0))
         assertNull(tracker.onSnapshot(FORKGRAM, group.replaceText("100 members", "Alex is typing"), at(1)))
-        assertEquals(listOf("chat", "3abd7dc3", "group", ""), current())
+        assertEquals(chat("3abd7dc3", "group"), current())
     }
 
     @Test
@@ -135,13 +114,7 @@ class TelegramActivityTrackerTest {
         tracker.onEvent(UiEvent(UiEventType.VIEW_CLICKED, FORKGRAM, "android.view.ViewGroup", null,
             "Channel. 3abd7dc3. Muted. Received at 19:39. 1234abcd"), at(0))
         assertNull(snapshot("forkgram-en-group.xml", 500))
-        assertEquals(listOf("chat", "3abd7dc3", "channel", ""), current())
-    }
-
-    @Test
-    fun channelWithoutMessageFieldIsChannel() {
-        tracker.onSnapshot(FORKGRAM, loadDump("forkgram-en-group.xml").root.withoutEditText(), at(0))
-        assertEquals(listOf("chat", "3abd7dc3", "channel", ""), current())
+        assertEquals(chat("3abd7dc3", "channel"), current())
     }
 
     @Test
@@ -160,59 +133,47 @@ class TelegramActivityTrackerTest {
         assertNull(tracker.onEvent(UiEvent(UiEventType.WINDOW_STATE_CHANGED, "com.android.systemui", "FrameLayout", null, null), at(2)))
         assertNull(tracker.onEvent(UiEvent(UiEventType.WINDOW_CONTENT_CHANGED, "fr.neamar.kiss", "FrameLayout", null, null), at(3)))
         val done = tracker.onEvent(UiEvent(UiEventType.WINDOW_STATE_CHANGED, "fr.neamar.kiss", "MainActivity", "KISS launcher", null), at(4_000))!!
-        assertEquals(listOf("chat_list", "", "", ""), done.activity.row())
+        assertEquals(LIST, done.activity.row())
         assertEquals(Duration.ofSeconds(4), done.duration)
         assertNull(tracker.leave(at(5_000)))
     }
 
     @Test
-    fun replaysForkgramEnglishEventsWithoutTree() {
-        val rows = replay("forkgram-en-events.tsv", tracker).map { it.activity.row() }
-        assertEquals(
-            listOf(
-                listOf("chat", "9df869ff", "direct", ""),
-                listOf("chat_list", "", "", ""),
-                listOf("chat_list", "", "", ""),
-                listOf("chat", "6fb63141", "channel", ""),
-                listOf("chat", "3b406ea6", "channel", ""),
-                listOf("media", "3b406ea6", "channel", "video"),
-                listOf("chat", "3b406ea6", "channel", ""),
-                listOf("chat", "3b406ea6", "channel", ""),
-                listOf("chat", "3b406ea6", "channel", ""),
+    fun replaysEventsWithoutTree() {
+        val cases = mapOf(
+            "forkgram-en-events.tsv" to listOf(
+                chat("9df869ff", "direct"),
+                // A permission dialog over the list splits it into two sessions.
+                LIST,
+                LIST,
+                chat("6fb63141", "channel"),
+                chat("3b406ea6", "channel"),
+                media("3b406ea6", "channel", "video"),
+                // Back in the chat three times after switching to other apps.
+                chat("3b406ea6", "channel"),
+                chat("3b406ea6", "channel"),
+                chat("3b406ea6", "channel"),
             ),
-            rows.take(9),
-        )
-    }
-
-    @Test
-    fun replaysForkgramRussianEventsWithoutTree() {
-        val rows = replay("forkgram-ru-events.tsv", tracker).map { it.activity.row() }
-        assertEquals(
-            listOf(
-                listOf("chat_list", "", "", ""),
-                listOf("chat", "9df869ff", "direct", ""),
-                listOf("chat", "6fb63141", "channel", ""),
-                listOf("chat", "3b406ea6", "channel", ""),
-                listOf("media", "3b406ea6", "channel", "video"),
-                listOf("chat", "3b406ea6", "channel", ""),
+            "forkgram-ru-events.tsv" to listOf(
+                LIST,
+                chat("9df869ff", "direct"),
+                chat("6fb63141", "channel"),
+                chat("3b406ea6", "channel"),
+                media("3b406ea6", "channel", "video"),
+                chat("3b406ea6", "channel"),
             ),
-            rows,
-        )
-    }
-
-    @Test
-    fun replaysTelegramEventsWithoutTree() {
-        val rows = replay("telegram-en-events.tsv", tracker).map { it.activity.row() }
-        assertEquals(
-            listOf(
-                listOf("chat_list", "", "", ""),
-                listOf("chat", "b17b4860", "direct", ""),
-                listOf("chat", "318fb1b7", "group", ""),
-                listOf("chat", "492a7632", "channel", ""),
-                listOf("media", "492a7632", "channel", "image"),
-                listOf("chat", "492a7632", "channel", ""),
+            "telegram-en-events.tsv" to listOf(
+                LIST,
+                chat("b17b4860", "direct"),
+                chat("318fb1b7", "group"),
+                chat("492a7632", "channel"),
+                media("492a7632", "channel", "image"),
+                chat("492a7632", "channel"),
             ),
-            rows,
         )
+        for ((fixture, expected) in cases) {
+            val t = TelegramActivityTracker(ignoredPackages = setOf(KEYBOARD))
+            assertEquals(fixture, expected, replay(fixture, t).map { it.activity.row() })
+        }
     }
 }

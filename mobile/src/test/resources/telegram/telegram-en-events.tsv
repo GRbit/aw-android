@@ -1,190 +1,37 @@
 # ms	type	package	class	text	content_description
-0	WINDOWS	null	null		
-3	WINDOWS	null	null		
-1338	CONTENT	fr.neamar.kiss	android.widget.ListView		
-1437	CONTENT	fr.neamar.kiss	android.widget.FrameLayout		
 1491	CLICKED	fr.neamar.kiss	android.widget.LinearLayout	Telegram	
 1525	STATE	org.telegram.messenger	org.telegram.ui.LaunchActivity	Telegram	
-1589	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
 1590	STATE	org.telegram.messenger	org.telegram.ui.LaunchActivity	Telegram	
 2186	STATE	com.android.systemui	android.widget.FrameLayout		
 5564	CLICKED	org.telegram.messenger	android.view.View		All
-5565	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-5682	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-5796	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-6756	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-6863	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
 7801	CLICKED	org.telegram.messenger	android.view.View		05a3b9fa
-7802	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-7917	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-8032	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-9692	CONTENT	org.telegram.messenger	android.view.ViewGroup		
 9694	CLICKED	org.telegram.messenger	android.view.ViewGroup		b17b4860. Received 18.07.25 at 15:30. 390092b4
-9729	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-9831	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-9848	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-9964	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
 12037	STATE	com.android.systemui	android.view.View		
-12084	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-12198	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-12318	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
 18746	STATE	com.android.systemui	android.widget.FrameLayout		
-25005	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-25017	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-25044	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
 25119	STATE	com.menny.android.anysoftkeyboard	android.inputmethodservice.SoftInputWindow	Back	
-25157	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-25275	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
 27192	STATE	com.menny.android.anysoftkeyboard	android.widget.FrameLayout	54fd1711	
 27246	STATE	com.menny.android.anysoftkeyboard	android.widget.FrameLayout	27d5482e	
 30465	STATE	com.menny.android.anysoftkeyboard	android.widget.FrameLayout	a2e9f606	
-30535	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-30640	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
 30803	STATE	com.menny.android.anysoftkeyboard	android.widget.FrameLayout	bea15c7b	
-30870	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-30911	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-31020	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
 31031	STATE	com.menny.android.anysoftkeyboard	android.widget.FrameLayout	7f7328fc	
-31094	CONTENT	org.telegram.messenger	android.widget.TextView		
-31207	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
 31275	STATE	com.menny.android.anysoftkeyboard	android.widget.FrameLayout	a59e2c24	
-31302	CONTENT	org.telegram.messenger	android.widget.TextView		
-31403	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-31686	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-31796	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-34057	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-34148	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-34734	CONTENT	org.telegram.messenger	android.view.ViewGroup		
 34735	CLICKED	org.telegram.messenger	android.view.ViewGroup		Group. 318fb1b7. Received 25.06.21 at 16:11. 2519ea30. f54837b1
-34777	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-34877	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-35004	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-35122	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-35157	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-35267	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-35385	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-35386	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-35489	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
 36233	STATE	com.android.systemui	android.widget.FrameLayout		
-37184	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-37299	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
 39555	STATE	com.android.systemui	android.view.View		
-39592	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-39694	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-39793	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
 41234	CLICKED	org.telegram.messenger	android.view.View		18e03e2a
-41236	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-41348	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-42424	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-42425	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-42426	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
 42430	CLICKED	org.telegram.messenger	android.widget.ImageView	Clear All	Clear All
 42464	STATE	com.menny.android.anysoftkeyboard	android.inputmethodservice.SoftInputWindow	Back	
-42538	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
 44042	CLICKED	org.telegram.messenger	android.view.ViewGroup		
-44079	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-44190	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-44307	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-44432	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-44484	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-44531	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-44785	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-44908	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-45911	CONTENT	org.telegram.messenger	android.view.ViewGroup		
-46028	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-46145	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-46248	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-46266	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-46380	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-46396	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-46516	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-46632	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-46746	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-46763	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-46881	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-46995	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-47012	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-47133	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-47243	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-47359	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-47478	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-47587	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-47604	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-47705	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-47737	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-47852	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-47976	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-47985	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-48053	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-48084	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-48186	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
 48567	STATE	com.android.systemui	android.widget.FrameLayout		
 49206	STATE	com.android.systemui	android.view.View		
-49310	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-49384	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-49486	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
 49985	STATE	com.android.systemui	android.view.View		
-50019	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-50131	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-50181	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-50297	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
 51738	STATE	com.android.systemui	android.view.View		
-51800	CONTENT	org.telegram.messenger	android.view.View		
-51917	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
 53009	CLICKED	org.telegram.messenger	android.view.View		a36a6718
-53010	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-53126	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-53238	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
 53502	CLICKED	org.telegram.messenger	android.view.View		f71fb785
-53504	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-53621	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-53734	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-54781	CONTENT	org.telegram.messenger	android.view.ViewGroup		
 54783	CLICKED	org.telegram.messenger	android.view.ViewGroup		Channel. 492a7632. Muted. 217 new messages. Received Sep 26 at 16:45. Video
-54893	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-54974	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-55089	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-55189	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-56038	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-56087	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
 56087	CLICKED	org.telegram.messenger	android.widget.FrameLayout		Go to bottom
-56196	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-56330	CONTENT	org.telegram.messenger	android.widget.ImageView		
-56441	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-56544	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-56664	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-57041	CONTENT	org.telegram.messenger	android.view.ViewGroup		
-57161	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-57274	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-57391	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-57474	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-57591	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-57594	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-57711	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-57820	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-57936	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-57957	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-58067	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-58167	CONTENT	org.telegram.messenger	androidx.recyclerview.widget.RecyclerView		
-58272	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
 58675	STATE	org.telegram.messenger	android.widget.FrameLayout	Go back	
-58740	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
 58741	STATE	org.telegram.messenger	android.widget.FrameLayout	Go back	
-58985	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-59097	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-59248	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-59363	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-61778	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-62559	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-62670	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-63025	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-63133	CONTENT	org.telegram.messenger	android.view.View		
-66193	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
 72107	STATE	com.android.systemui	android.view.View		
-72133	CONTENT	org.telegram.messenger	android.view.View		
-72236	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
 72238	STATE	org.telegram.messenger	org.telegram.ui.LaunchActivity	492a7632	
 72668	STATE	com.android.systemui	android.view.View		
-72708	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-72826	CONTENT	org.telegram.messenger	android.widget.FrameLayout		
-72926	CONTENT	org.telegram.messenger	android.widget.FrameLayout		

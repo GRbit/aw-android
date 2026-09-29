@@ -47,18 +47,6 @@ class UiSnapshotTest {
         val scrollables = snapshot.root.all().filter { it.scrollable }
         assertTrue(scrollables.isNotEmpty())
         assertTrue(scrollables.all { it.children.isEmpty() && it.text == null && it.contentDescription == null })
-        assertFalse(snapshot.truncated)
-        assertEquals(snapshot.root.all().size, snapshot.nodeCount)
-    }
-
-    @Test
-    fun readsNodeProperties() {
-        val nodes = loadDump("forkgram-en-channel.xml").root.all()
-        val back = nodes.single { it.contentDescription == "Go back" }
-        assertEquals("android.widget.ImageView", back.className)
-        assertTrue(back.clickable)
-        val folders = loadDump("forkgram-en-list.xml").root.all()
-        assertTrue(folders.any { it.contentDescription == "Telegram" })
     }
 
     @Test

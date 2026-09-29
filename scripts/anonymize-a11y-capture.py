@@ -5,7 +5,8 @@ Usage: anonymize-a11y-capture.py OUT_DIR CAPTURE...
 
 A capture is either a `uiautomator dump` XML file or a `uiautomator events` log.
 XML dumps keep their structure; only text, content-desc and hint are rewritten.
-Event logs are reduced to a TSV with the fields the watcher reads (see EVENT_TYPES).
+Event logs are reduced to a TSV of the events and fields the watcher reads
+(see TSV_EVENT_TYPES).
 
 User content (chat names, messages, folder names) becomes the first 8 hex digits of its
 sha1, so the same name hashes identically across all files of one run and tests can
@@ -75,9 +76,9 @@ EVENT_TYPES = {
     "TYPE_WINDOWS_CHANGED": "WINDOWS",
     "TYPE_VIEW_CLICKED": "CLICKED",
 }
-# Only these event types carry text the watcher reads. Content-change payloads hold
-# message previews, so they are dropped rather than hashed.
-EVENT_TYPES_WITH_TEXT = {"STATE", "CLICKED"}
+# Only these event types reach the TSV: the tracker ignores the rest, and content-change
+# payloads hold message previews. The others are still parsed so ms offsets stay stable.
+TSV_EVENT_TYPES = {"STATE", "CLICKED"}
 IGNORED_TEXT_PACKAGES = {"com.android.systemui"}
 
 EVENT_RE = re.compile(
@@ -240,7 +241,9 @@ def main():
         with open(dst, "w", encoding="utf-8") as f:
             f.write("# ms\ttype\tpackage\tclass\ttext\tcontent_description\n")
             for e in events:
-                keep = e["type"] in EVENT_TYPES_WITH_TEXT and e["pkg"] not in IGNORED_TEXT_PACKAGES
+                if e["type"] not in TSV_EVENT_TYPES:
+                    continue
+                keep = e["pkg"] not in IGNORED_TEXT_PACKAGES
                 text = anon.anonymize(e["text"]) if keep else ""
                 cd = anon.anonymize(e["cd"]) if keep else ""
                 f.write("\t".join([str(ts_ms(e["ts"]) - t0), e["type"], e["pkg"], e["cls"],
